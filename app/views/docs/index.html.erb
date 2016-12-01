@@ -1,0 +1,7 @@
+<h1>View All Docs</h1>
+
+<% @docs.each do |doc| %>
+  <h2><%= link_to doc.title, doc %></h2>
+  <p>Created <%= time_ago_in_words(doc.created_at) %> ago</p>
+  <p> <%= truncate(doc.content, length: 30) %></p>
+<% end %>
